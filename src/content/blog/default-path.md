@@ -1,7 +1,7 @@
 ---
 title: Default Path
 options:
-  custompath: url-can-be-custom
+  custompath: ''
   published: true
 meta:
   date: '2019-05-04'
