@@ -25,7 +25,7 @@ const BlogList = (props) => {
 export const blogListQuery = graphql`
   query BlogListQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date]},
+      sort: { order: DESC, fields: [frontmatter___meta___date]},
       filter: {
         fields: { template: { eq: "blog" } },
         frontmatter: { options: { published: { eq: true } } }

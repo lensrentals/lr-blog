@@ -27,6 +27,16 @@ templates live at `src/templates/*.js`
 
 The [`onCreateNode`](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode) API is used to let individual posts overwrite either their own url or template type
 
+## netfliycms
+
+[netfliycms docs on gatsby](https://www.netlifycms.org/docs/gatsby/#add-netlify-cms-to-your-site)
+
+Rather than follow the [steps for adding a config.yaml file](https://www.netlifycms.org/docs/gatsby/#configuration), this repo uses the `CMS.int()` version of this via the [netlify-cms-app](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-app). This lets us configure the cms via javascript rather than yaml files. 
+
+The config file lives at `src/cms/cms.js`.
+
+The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/gatsby/#enable-identity-and-git-gateway)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)
 <p align="center">
   <a href="https://www.gatsbyjs.org">
