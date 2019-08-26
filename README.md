@@ -1,10 +1,31 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4d8e8cf9-da40-435a-b74f-0bdc60834424/deploy-status)](https://app.netlify.com/sites/lr-blog-poc/deploys)
 
+## how to run
+
+Run locally with `gatsby develop`
+
+To build, run `gatsby build`
+This is also the script that will be run on [Netlify](https://lr-blog-poc.netlify.com/), and served from the `public` directory
+
 ## create a new gatsby site
 
 ```sh 
 gatsby new lr-blog
 ```
+
+## adding markdown pages
+
+[Gatsby Doc For Adding Markdown Pages](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
+
+[gatsby-source-filesyste docs](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-filesystem)
+
+markdown posts live at `src/content/type/*.md`
+
+[gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark)
+
+templates live at `src/templates/*.js`
+
+The [`onCreateNode`](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode) API is used to let individual posts overwrite either their own url or template type
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)
 <p align="center">
