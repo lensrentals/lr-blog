@@ -35,7 +35,11 @@ Rather than follow the [steps for adding a config.yaml file](https://www.netlify
 
 The config file lives at `src/cms/cms.js`.
 
-The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/gatsby/#enable-identity-and-git-gateway)
+The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/gatsby/#enable-identity-and-git-gateway), and can be accessed at `/admin`.
+
+## Cloudinary
+
+
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)
 <p align="center">
