@@ -13,6 +13,23 @@ export const blog = {
       widget: 'string' 
     },
     {
+      name: 'thumbnail',
+      label: 'Thumbnail',
+      widget: 'object',
+      fields: [
+        {
+          name: 'url',
+          label: 'Image',
+          widget: 'image',
+        },
+        {
+          name: 'alt',
+          label: 'Alt Text',
+          widget: 'string',
+        }
+      ]
+    },
+    {
       name: 'options',
       label: 'Options',
       widget: 'object',
@@ -49,6 +66,27 @@ export const blog = {
           label: 'Date',
           widget: 'date' 
         },
+      ]
+    },
+    {
+      name: 'page_banner',
+      label: 'Page Banner',
+      widget: 'object',
+      required: false,
+      hint: '(this will default to thumbnail if empty)',
+      fields: [
+        {
+          name: 'url',
+          label: 'Image',
+          widget: 'image',
+          required: false,
+        },
+        {
+          name: 'alt',
+          label: 'Alt Text',
+          widget: 'string',
+          required: false,
+        }
       ]
     },
     {

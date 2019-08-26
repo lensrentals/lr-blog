@@ -35,7 +35,16 @@ Rather than follow the [steps for adding a config.yaml file](https://www.netlify
 
 The config file lives at `src/cms/cms.js`.
 
-The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/gatsby/#enable-identity-and-git-gateway)
+The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/gatsby/#enable-identity-and-git-gateway), and can be accessed at `/admin`.
+
+## Cloudinary
+
+[cloudinary.com/](https://cloudinary.com/)
+
+Uses the [netlify-cms-media-library-cloudinary](https://www.npmjs.com/package/netlify-cms-media-library-cloudinary) plugin, is called with `CMS.registerMediaLibrary` in `src/cms/cms.js`
+
+For display, also using the plugin [react-cloudinary-lazy-image](https://www.npmjs.com/package/react-cloudinary-lazy-image)
+
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)
 <p align="center">
