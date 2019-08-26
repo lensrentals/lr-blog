@@ -35,6 +35,8 @@ Rather than follow the [steps for adding a config.yaml file](https://www.netlify
 
 The config file lives at `src/cms/cms.js`.
 
+The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/gatsby/#enable-identity-and-git-gateway)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)
 <p align="center">
   <a href="https://www.gatsbyjs.org">
