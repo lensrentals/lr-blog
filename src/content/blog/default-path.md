@@ -1,10 +1,10 @@
 ---
-title: "Default Path"
-options: 
+title: Default Path
+options:
+  custompath: url-can-be-custom
   published: true
-  custom_url: null
 meta:
-  date: "2019-05-04"
+  date: '2019-05-04'
 ---
 
 This post uses the default path
