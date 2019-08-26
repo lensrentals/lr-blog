@@ -1,32 +1,27 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import Img from 'react-cloudinary-lazy-image'
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
+// TODO this whole file needs rethinking
+ 
+export default (props) => {
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  const getImageName = src => {
+    const array = src.split('/')
+    return array[array.length - 1]
+  }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <picture>
+      <Img
+          cloudName={'lensrentals'}
+          imageName={getImageName(props.src)}
+          fixed={{
+              width: props.width,
+              height: props.height
+          }}
+          urlParams={'g_face,c_lfill'}
+          alt={props.alt}
+      />
+    </picture>
+  )
 }
-
-export default Image

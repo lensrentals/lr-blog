@@ -39,6 +39,11 @@ The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/
 
 ## Cloudinary
 
+[cloudinary.com/](https://cloudinary.com/)
+
+Uses the [netlify-cms-media-library-cloudinary](https://www.npmjs.com/package/netlify-cms-media-library-cloudinary) plugin, is called with `CMS.registerMediaLibrary` in `src/cms/cms.js`
+
+For display, also using the plugin [react-cloudinary-lazy-image](https://www.npmjs.com/package/react-cloudinary-lazy-image)
 
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)

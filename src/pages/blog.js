@@ -13,9 +13,7 @@ const BlogList = (props) => {
 
   return (
     <Layout>
-      <SEO title="Page two" />
-      <h1>Hi from the blog page</h1>
-      <p>Welcome to the blog page</p>
+      <SEO title="Blog" />
       <Link to="/">Go back to the homepage</Link>
       {edges.map((edge, index) => <BlogPreview key={index} {...edge.node} />)}
     </Layout>
@@ -38,6 +36,13 @@ export const blogListQuery = graphql`
           }
           frontmatter {
             title
+            meta {
+              date
+            }
+            thumbnail {
+              url
+              alt
+            }
           }
         }
       }
