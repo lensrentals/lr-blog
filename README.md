@@ -25,6 +25,8 @@ markdown posts live at `src/content/type/*.md`
 
 templates live at `src/templates/*.js`
 
+The [`onCreateNode`](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode) API is used to let individual posts overwrite either their own url or template type
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)
 <p align="center">
   <a href="https://www.gatsbyjs.org">

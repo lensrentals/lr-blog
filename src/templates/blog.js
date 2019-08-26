@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+
 export default function BlogPost({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -18,13 +19,12 @@ export default function BlogPost({
     </div>
   )
 }
-export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+export const blogPostQuery = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
         title
       }
     }
