@@ -18,7 +18,7 @@ const image = {
       name: 'title',
       label: 'Title',
       widget: 'string',
-      isRequired: false,
+      required: false,
     },
     {
       name: 'align',
@@ -80,28 +80,28 @@ const ImagePreview = props => {
     case 'full':
       style = {
         display: 'block',
-        margin: '1em 0',
+        margin: '0',
       }
       break;
     case 'left':
       style = {
         float: 'left',
         display: 'block',
-        margin: '1em 1em 1em 0',
+        marginRight: '1em',
       }
       break;
     case 'right':
       style = {
         float: 'right',
         display: 'block',
-        margin: '1em 0 1em 1em',
+        marginLeft: '1em',
       }
       break;
     default:
       // 'center'
       style = {
         display: 'block',
-        margin: '1em auto',
+        margin: '0 auto',
       }
   }
 

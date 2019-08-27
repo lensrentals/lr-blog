@@ -47,7 +47,16 @@ The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/
 
 ## netlify custom components
 
-
+[editor-components](https://www.netlifycms.org/docs/custom-widgets/#registereditorcomponent) live at `src/cms/editor/*.js`
+They are registered in `cms.js`
+Each editor-component needs
+ - ``id` - the value that is registered in `cms.js`
+ - ``label` - the label that shows in the editor
+ - ``fields` - fields
+ - ``pattern` - a regex pattern that will read from the markdown file and convert the matching string into an editor block in the `body` field in the editor
+ - ``fromBlock` - reads data from the `match` provided from `pattern` regex, populates the editor. This will error HARD if any of the `obj` regex return `undefined`
+ - ``toBlock` - what is actually written to the markdown file, as a string
+ - ``toPreview` - what is rendered in the cms editor preview. Netlify CMS prefers this to be a react component, and _can_ be any react component, even ones used for actual page display composition
 
 ## Cloudinary
 
