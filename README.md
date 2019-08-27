@@ -13,7 +13,7 @@ This is also the script that will be run on [Netlify](https://lr-blog-poc.netlif
 gatsby new lr-blog
 ```
 
-## adding markdown pages
+## markdown pages
 
 [Gatsby Doc For Adding Markdown Pages](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
 
@@ -26,6 +26,12 @@ markdown posts live at `src/content/type/*.md`
 templates live at `src/templates/*.js`
 
 The [`onCreateNode`](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode) API is used to let individual posts overwrite either their own url or template type
+
+## mdx
+
+[mdx](https://mdxjs.com/getting-started/gatsby) lets you use react in markdown files!
+
+[how mdx works with gatsby](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
 
 ## netfliycms
 

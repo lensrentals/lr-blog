@@ -3,7 +3,7 @@ const { slugify } = require(`./src/helpers`)
 
 exports.onCreateNode = ({ node, actions }) => {
 	const { createNodeField } = actions
-	if (node.internal.type === `MarkdownRemark`) {
+	if (node.internal.type === `Mdx`) {
     const directory = node.fileAbsolutePath.match(/([^\/]+)\/[^/]+$/)[1]
     let slug;
     let template;
@@ -47,7 +47,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         sort: { order: DESC, fields: [frontmatter___meta___date] }
         limit: 1000
       ) {
@@ -68,7 +68,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allMdx.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/${node.fields.template}.js`),
