@@ -33,6 +33,8 @@ The [`onCreateNode`](https://www.gatsbyjs.org/docs/node-apis/#onCreateNode) API 
 
 [how mdx works with gatsby](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/)
 
+in order to use components in mdx via the netlify cms edidtor, `components` object is passed inside the `markdown.js` component via [mdxprovider](https://mdxjs.com/getting-started#mdxprovider)
+
 ## netfliycms
 
 [netfliycms docs on gatsby](https://www.netlifycms.org/docs/gatsby/#add-netlify-cms-to-your-site)
