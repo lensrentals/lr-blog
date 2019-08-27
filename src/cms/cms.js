@@ -3,7 +3,13 @@ import cloudinary from 'netlify-cms-media-library-cloudinary';
 
 import { blog } from './blog-fields'
 
+// editor components
+import image from './editor/image'
+
 CMS.registerMediaLibrary(cloudinary);
+
+// editor components
+CMS.registerEditorComponent(image);
 
 CMS.init({
   config: {
