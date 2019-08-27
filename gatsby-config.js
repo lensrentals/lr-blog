@@ -19,7 +19,17 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+				extensions: [`.mdx`, `.md`, `.markdown`],
+				defaultLayouts: {
+          content: require.resolve("./src/components/markdown.js"),
+        },
+        // gatsby-transformer-remark plugins can still be loaded
+				// gatsbyRemarkPlugins: [], 
+      },
+		},
     // ^ my plugins, v their plugins
     `gatsby-plugin-react-helmet`,
     {

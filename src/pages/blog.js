@@ -9,7 +9,7 @@ const BlogList = (props) => {
 
   const {
     edges
-  } = props.data.allMarkdownRemark
+  } = props.data.allMdx
 
   return (
     <Layout>
@@ -22,7 +22,7 @@ const BlogList = (props) => {
 
 export const blogListQuery = graphql`
   query BlogListQuery {
-    allMarkdownRemark(
+    allMdx(
       sort: { order: DESC, fields: [frontmatter___meta___date]},
       filter: {
         fields: { template: { eq: "blog" } },

@@ -2,11 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import Markdown from '../components/markdown'
 import Image from "../components/image"
 
 const BlogPost = (props) => {
-  const { markdownRemark } = props.data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+  const { mdx } = props.data // data.Mdx holds our post data
+  const { frontmatter, body } = mdx
 
   const Banner = () => {
     let image;
@@ -25,10 +26,7 @@ const BlogPost = (props) => {
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.meta.date}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <Markdown post={body} />
         </div>
       </div>
     </Layout>
@@ -37,8 +35,7 @@ const BlogPost = (props) => {
 
 export const blogPostQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
         meta {
@@ -53,6 +50,7 @@ export const blogPostQuery = graphql`
           alt
         }
       }
+      body
     }
   }
 `
