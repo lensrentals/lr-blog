@@ -2,6 +2,8 @@ import React from 'react';
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from '@mdx-js/react'
 
+import Image from './image'
+
 const H2 = props => {
 
 	return (
@@ -20,6 +22,7 @@ const H2 = props => {
 
 const components = {
 	h2: H2,
+	img: Image
 }
 
 const MarkdownBlock = (props) => {
