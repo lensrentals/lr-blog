@@ -45,6 +45,10 @@ The config file lives at `src/cms/cms.js`.
 
 The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/gatsby/#enable-identity-and-git-gateway), and can be accessed at `/admin`.
 
+## netlify custom components
+
+
+
 ## Cloudinary
 
 [cloudinary.com/](https://cloudinary.com/)
