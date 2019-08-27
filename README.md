@@ -58,13 +58,16 @@ Each editor-component needs
  - ``toBlock` - what is actually written to the markdown file, as a string
  - ``toPreview` - what is rendered in the cms editor preview. Netlify CMS prefers this to be a react component, and _can_ be any react component, even ones used for actual page display composition
 
+ Components
+  - `image`
+    - overwrites default NetlifyCMS image widget
+    - renders `<img />` tag to markdown file, is converted to React `<Image />` component with (`mdxprovider`)[#mdx]
+
 ## Cloudinary
 
 [cloudinary.com/](https://cloudinary.com/)
 
 Uses the [netlify-cms-media-library-cloudinary](https://www.npmjs.com/package/netlify-cms-media-library-cloudinary) plugin, is called with `CMS.registerMediaLibrary` in `src/cms/cms.js`
-
-For display, also using the plugin [react-cloudinary-lazy-image](https://www.npmjs.com/package/react-cloudinary-lazy-image)
 
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER)
