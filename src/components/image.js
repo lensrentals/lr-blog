@@ -1,5 +1,4 @@
 import React from 'react'
-import Img from 'react-cloudinary-lazy-image'
 
 // TODO this whole file needs rethinking
  
