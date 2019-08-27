@@ -5,7 +5,7 @@ import { blog } from './blog-fields'
 
 // editor components
 import image from './editor/image'
-import { api_select, api_fetch } from './editor/api_select'
+import api_select, { api_fetch } from './editor/api_select'
 
 // by moving the CMS methods into an async IFFE we can do fetch calls and pass them to components!
 (async function startCms() {
