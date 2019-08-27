@@ -16,6 +16,7 @@ const BlogPreview = (props) => {
   return (
     <div style={{
       margin: '1em 0',
+      textAlign: 'center',
     }}>
       <Link to={slug}>
         <Image src={thumbnail.url} alt={thumbnail.alt} height={300} width={300} />
