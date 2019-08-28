@@ -1,6 +1,6 @@
 import React from 'react'
 
-const api_fetch = fetch('https://pokeapi.co/api/v2/pokemon/?limit=20')
+const api_fetch = fetch('https://pokeapi.co/api/v2/pokemon/?limit=151')
   .then(response => {
     return response.json()
   })

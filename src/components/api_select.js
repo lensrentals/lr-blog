@@ -9,7 +9,8 @@ const ApiSelect = props => {
       margin: '0 auto',
       display: 'block',
       height: '200px',
-      width: '200px'
+      width: '200px',
+      imageRendering: 'pixelated',
     }}
     />
   )
