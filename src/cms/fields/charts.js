@@ -11,6 +11,12 @@ export const charts = {
   create: true,
   delete: true,
   fields: [
+    {
+      label: 'Lens', 
+      name: 'lensContainer', 
+      widget: 'MtfChartContainer',
+      required: false,
+    },
     ...commonFields,
     {
       name: 'body',
@@ -49,22 +55,14 @@ export const charts = {
           ]
         },
         {
-          label: 'Charts',
-          name: 'charts',
-          widget: 'list',
-          allow_add: true,
-          fields: [
-            {
-              label: 'Chart', 
-              name: 'chart', 
-              widget: 'select', 
-              multiple: true,
-              options: mtfCharts.map(chart => ({
-                label: chart.name,
-                value: chart.chart
-              }))
-            },
-          ],
+          label: 'Charts', 
+          name: 'charts', 
+          widget: 'select', 
+          multiple: true,
+          options: mtfCharts.map(chart => ({
+            label: chart.focalLength,
+            value: chart.chart
+          }))
         },
       ]
     }
