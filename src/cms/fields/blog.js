@@ -1,9 +1,9 @@
 import commonFields from './common-fields'
 
-export const chart = {
-  label: 'Charts',
-  name: 'charts',
-  folder: 'src/content/charts',
+export const blog = {
+  label: 'Blog',
+  name: 'blog',
+  folder: 'src/content/blog',
   extension: 'mdx',
   format: 'frontmatter',
   create: true,
@@ -15,9 +15,6 @@ export const chart = {
       label: 'Body',
       // widget: 'mdx' 
       widget: 'markdown' 
-    },
-    {
-      // put a list of charts here
     },
   ]
 };
