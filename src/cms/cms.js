@@ -31,10 +31,10 @@ import { MtfControl, MtfPreview } from './widgets/mtf'
       backend: {
         // name: 'github',
         name: 'git-gateway',
-        accept_roles: [  // optional - accepts all users if left out
-          'admin',
-          'editor'
-        ],
+        // accept_roles: [  // optional - accepts all users if left out
+        //   'admin',
+        //   'editor'
+        // ],
         repo: 'ryanfiller/lr-blog',
         branch: 'master',
         publish_mode: 'editorial_workflow',
