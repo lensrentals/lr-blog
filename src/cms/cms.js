@@ -29,6 +29,7 @@ import { MtfControl, MtfPreview } from './widgets/mtf'
     config: {
       load_config_file: false,
       backend: {
+        squash_merges: true,
         // name: 'github',
         name: 'git-gateway',
         // accept_roles: [  // optional - accepts all users if left out
