@@ -10,7 +10,7 @@ import image from './editor/image'
 import { api_select, api_fetch } from './editor/api_select'
 
 // widgets
-import { MtfChartControl, MtfChartPreview } from './widgets/mtf_charts'
+import { MtfControl, MtfPreview } from './widgets/mtf'
 
 // by moving the CMS methods into an async IFFE we can do fetch calls and pass them to components!
 (async function startCms() {
@@ -18,7 +18,7 @@ import { MtfChartControl, MtfChartPreview } from './widgets/mtf_charts'
   CMS.registerMediaLibrary(cloudinary);
   
   // widgets
-  CMS.registerWidget('MtfChart', MtfChartControl, MtfChartPreview);
+  CMS.registerWidget('mtf', MtfControl, MtfPreview);
 
   // editor components
   CMS.registerEditorComponent(image);

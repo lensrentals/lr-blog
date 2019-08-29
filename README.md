@@ -73,6 +73,17 @@ TODO - explain how the async/await works when initializing CMS.init()
 
 [widgets](https://www.netlifycms.org/docs/custom-widgets/#registerwidget) are custom fields that can used to edit post frontmatter. They live at `src/cms/widgets/*.js`
 
+[widget components](https://www.netlifycms.org/docs/custom-widgets/#writing-react-components-inline)
+
+#### control
+
+control can be a react component or a string that corresponds to a default netlifycms widget.
+React Components can inherit styles from native widgets by applying the `props.className` that is passed into them.
+
+#### preview
+
+preview is a react component that receives an immutable-js(https://immutable-js.github.io/immutable-js/) object as a `value` props. This can be converted back to javascript with the [`toJS()` method](https://immutable-js.github.io/immutable-js/#converts-back-to-raw-javascript-objects-)
+
 
 ## Cloudinary
 

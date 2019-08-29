@@ -11,12 +11,6 @@ export const charts = {
   create: true,
   delete: true,
   fields: [
-    {
-      label: 'Lens', 
-      name: 'lensContainer', 
-      widget: 'MtfChartContainer',
-      required: false,
-    },
     ...commonFields,
     {
       name: 'body',
@@ -27,7 +21,7 @@ export const charts = {
     {
       label: 'MTF Chart Sets',
       name: 'chartset',
-      widget: 'list',
+      widget: 'mtf', // registered editor component in cms.js
       allow_add: true,
       fields: [
         {
@@ -61,7 +55,7 @@ export const charts = {
           multiple: true,
           options: mtfCharts.map(chart => ({
             label: chart.focalLength,
-            value: chart.chart
+            value: `{ "name": "${chart.focalLength}", "chart": "${chart.chart}" }`
           }))
         },
       ]
