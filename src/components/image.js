@@ -52,14 +52,33 @@ export default (props) => {
 
   style.border = '.5em ridge purple'
 
+  const addParams = (url, params) => {
+		const splitUrl = url.split('upload/')
+		return `${splitUrl[0]}upload/${params}/${splitUrl[1]}`
+	}
+
   return ( 
     <picture style={{...style}}>
-      <img
-        src={src}
-        alt={alt}
-        title={title}
-        style={{margin: '0', lineHeight: '0', display: 'block', width: '100%'}}
-      />
+        {!src.includes('.gif'|| '.svg') &&
+					<>
+						{props.align === 'full' &&
+							<source 
+								srcSet={addParams(src, `c_scale,w_1200`)} 
+								media={`(min-width: 1200px)`} 
+							/>
+						}
+						<source 
+							srcSet={addParams(src, `c_scale,w_768`)} 
+							media={`(min-width: 768px)`} 
+						/>
+					</>
+				}
+				<img 
+					src={src}
+					alt={alt}
+          title={title}
+          style={{margin: '0', lineHeight: '0', display: 'block', width: '100%'}}
+				/>
     </picture>
   )
 }
