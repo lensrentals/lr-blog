@@ -29,7 +29,12 @@ import { MtfControl, MtfPreview } from './widgets/mtf'
     config: {
       load_config_file: false,
       backend: {
-        name: 'github',
+        // name: 'github',
+        name: 'git-gateway',
+        accept_roles: {// optional - accepts all users if left out
+          admin,
+          editor,
+        },
         repo: 'ryanfiller/lr-blog',
         branch: 'master',
         publish_mode: 'editorial_workflow',
