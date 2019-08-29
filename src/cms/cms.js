@@ -32,8 +32,8 @@ import { MtfControl, MtfPreview } from './widgets/mtf'
         // name: 'github',
         name: 'git-gateway',
         accept_roles: {  // optional - accepts all users if left out
-          admin,
-          editor,
+          'admin',
+          'editor',
         },
         repo: 'ryanfiller/lr-blog',
         branch: 'master',
