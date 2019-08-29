@@ -37,8 +37,8 @@ import { MtfControl, MtfPreview } from './widgets/mtf'
         // ],
         repo: 'ryanfiller/lr-blog',
         branch: 'master',
-        publish_mode: 'editorial_workflow',
       },
+      publish_mode: 'editorial_workflow',
       media_library:{
         name: 'cloudinary',
         config: {
