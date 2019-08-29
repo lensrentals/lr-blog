@@ -94,3 +94,9 @@ Uses the [netlify-cms-media-library-cloudinary](https://www.npmjs.com/package/ne
 Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary-react) for better image transformations.
 
 [Cloudinary image transformation url params](https://cloudinary.com/documentation/image_transformation_reference) are used to build responsive images.
+
+## Publish Mode
+
+[publish mode](https://www.netlifycms.org/docs/configuration-options/#publish-mode) is set to `editorial_workflow`, so posts can be drafted which will create an open PR in the git repo.
+
+[squash merge](https://www.netlifycms.org/docs/beta-features/#squash-merge-github-pull-requests) beta feature is also turned on for these PRs.
