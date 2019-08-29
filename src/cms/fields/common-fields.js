@@ -33,7 +33,7 @@ const commonFields = [
         default: false
       },
       {
-        name: 'custompath',
+        name: 'customurl',
         label: 'Custom Path',
         widget: 'string', 
         default: '',

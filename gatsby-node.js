@@ -8,16 +8,16 @@ exports.onCreateNode = ({ node, actions }) => {
     let slug;
     let template;
     
-    if (node.frontmatter.options.custom_url) {
-      url = slugify(node.frontmatter.options.custom_url);
+    if (node.frontmatter.options.customurl) {
+      url = slugify(node.frontmatter.options.customurl);
     } else {
       url = slugify(node.frontmatter.title);
     }
     slug = `${directory}/${url}`;
     
     
-    if (node.frontmatter.options.custom_template) {
-      template = `${node.frontmatter.options.customtemplate}.js`;
+    if (node.frontmatter.options.customtemplate) {
+      template = node.frontmatter.options.customtemplate;
     } else {
       template = directory;
     }
