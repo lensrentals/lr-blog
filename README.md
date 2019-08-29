@@ -73,7 +73,7 @@ TODO - explain how the async/await works when initializing CMS.init()
 
 [widgets](https://www.netlifycms.org/docs/custom-widgets/#registerwidget) are custom fields that can used to edit post frontmatter. They live at `src/cms/widgets/*.js`
 
-[widget components](https://www.netlifycms.org/docs/custom-widgets/#writing-react-components-inline)
+[widget components](https://www.netlifycms.org/docs/custom-widgets/#writing-react-components-inline) *must be* React.Class components as they need to inherit `ref`s from the editor window.
 
 #### control
 
