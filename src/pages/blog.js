@@ -25,7 +25,7 @@ export const blogListQuery = graphql`
     allMdx(
       sort: { order: DESC, fields: [frontmatter___meta___date]},
       filter: {
-        fields: { template: { eq: "blog" } },
+        # fields: { template: { eq: "blog" } },
         frontmatter: { options: { published: { eq: true } } }
       },
     ) {

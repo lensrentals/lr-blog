@@ -47,7 +47,9 @@ The auth version is current set to [gitgateway](https://www.netlifycms.org/docs/
 
 ## netlify custom components
 
-[editor-components](https://www.netlifycms.org/docs/custom-widgets/#registereditorcomponent) live at `src/cms/editor/*.js`
+### editor-components
+
+[editor-components](https://www.netlifycms.org/docs/custom-widgets/#registereditorcomponent) are components that live inside the markdown body editor on every page that uses the `body` field. They live at `src/cms/editor/*.js`
 They are registered in `cms.js`
 Each editor-component needs
  - ``id` - the value that is registered in `cms.js`
@@ -62,6 +64,26 @@ Each editor-component needs
   - `image`
     - overwrites default NetlifyCMS image widget
     - renders `<img />` tag to markdown file, is converted to React `<Image />` component with (`mdxprovider`)[#mdx]
+
+#### Sourcing Data in editor-components
+
+TODO - explain how the async/await works when initializing CMS.init()
+
+### widgets
+
+[widgets](https://www.netlifycms.org/docs/custom-widgets/#registerwidget) are custom fields that can used to edit post frontmatter. They live at `src/cms/widgets/*.js`
+
+[widget components](https://www.netlifycms.org/docs/custom-widgets/#writing-react-components-inline) *must be* React.Class components as they need to inherit `ref`s from the editor window.
+
+#### control
+
+control can be a react component or a string that corresponds to a default netlifycms widget.
+React Components can inherit styles from native widgets by applying the `props.className` that is passed into them.
+
+#### preview
+
+preview is a react component that receives an immutable-js(https://immutable-js.github.io/immutable-js/) object as a `value` props. This can be converted back to javascript with the [`toJS()` method](https://immutable-js.github.io/immutable-js/#converts-back-to-raw-javascript-objects-)
+
 
 ## Cloudinary
 
