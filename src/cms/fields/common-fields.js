@@ -42,9 +42,12 @@ const commonFields = [
       {
         name: 'customtemplate',
         label: 'Custom Template',
-        widget: 'string',
+        widget: 'select',
         default: '', 
-        required: false
+        required: false,
+        options: [
+          'red-background'
+        ]
       },
     ]
   },

@@ -17,7 +17,7 @@ exports.onCreateNode = ({ node, actions }) => {
     
     
     if (node.frontmatter.options.custom_template) {
-      template = node.frontmatter.options.customtemplate;
+      template = `${node.frontmatter.options.customtemplate}.js`;
     } else {
       template = directory;
     }
