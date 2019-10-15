@@ -100,3 +100,60 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 [publish mode](https://www.netlifycms.org/docs/configuration-options/#publish-mode) is set to `editorial_workflow`, so posts can be drafted which will create an open PR in the git repo.
 
 [squash merge](https://www.netlifycms.org/docs/beta-features/#squash-merge-github-pull-requests) beta feature is also turned on for these PRs.
+
+<hr />
+
+**Technology Notes
+- Git based static site generators
+    - Jekyll (ruby) https://jekyllrb.com/
+        - Pros:
+            - Some experience
+            - Very mature
+            - Ruby
+        - Cons:
+            - Slow-is
+            - Decoupled from editing process
+    - Gatsby (react) https://www.gatsbyjs.org/
+        - Pros:
+            - A lot of recent experience
+            - Javascript / React
+            - graphql
+            - Fast
+            - Large plugin library
+            - Can integrate components well with cms
+            - can source data from multiple origins (existing Wordpress site) https://www.gatsbyjs.org/packages/gatsby-source-wordpress/
+        - Cons:
+            - New-ish
+            - Documentation missing
+            - Pre-rendering SSR / SEO concerns
+    - Hugo (go) https://gohugo.io/
+        - Pros:
+            - Go
+            - Will seemed interested
+        - Cons:
+            - Go
+- CMS systems
+    - Netlify https://www.netlifycms.org/docs/intro/
+        - Pros
+            - Hostable wherever (AWS / github / netfliy )
+            - Built in react, integrates well with javascript
+            - Extensible, both in terms of templating and in terms on content types
+                - Can make custom templates for pages
+                - Can make custom widgets for data types
+        - Cons
+            - Not extremely well documented for non out-of-the-box use cases
+            - Requires more initial setup, especially in terms of user experience
+    - Forestry https://forestry.io/
+        - Pros
+            - More polished
+            - Hostable wherever (AWS / github / netfliy )
+        - Cons
+            - No true widget customization, only shortcakes
+- CDNs
+    - cloudinary - https://cloudinary.com/
+    - imgix - https://www.imgix.com/
+    - We may want to stick with S3 for this.
+
+- Stackbit - https://www.stackbit.com/
+    - Cool tool for quickly scaffolding SSG/CMS combinations. 
+    - Good for reference, but I think we’re better off setting up our own config rather than sifting through someone else’s
