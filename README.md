@@ -103,7 +103,7 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 
 <hr />
 
-**Technology Notes
+** Technology Notes
 - Git based static site generators
     - Jekyll (ruby) https://jekyllrb.com/
         - Pros:
