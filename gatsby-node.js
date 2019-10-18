@@ -61,6 +61,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      allWordpressPost {
+        edges {
+          node {
+            id
+            slug
+            title
+            date
+            content
+          }
+        }
+      }
     }
   `)
   // Handle errors
@@ -76,6 +87,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         id: node.id,
         slug: node.fields.slug,
         template: node.fields.template,
+      },
+    })
+  })
+  result.data.allWordpressPost.edges.forEach(({ node }) => {
+    console.log('==========',node)
+    createPage({
+      path: node.slug,
+      component: path.resolve(`./src/templates/wordpress-blog.js`),
+      context: {
+        id: node.id,
+        slug: node.slug,
       },
     })
   })

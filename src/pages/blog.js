@@ -4,18 +4,15 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogPreview from '../components/blog_preview'
+import WordpressPreview from '../components/wordpress_preview'
 
 const BlogList = (props) => {
-
-  const {
-    edges
-  } = props.data.allMdx
-
   return (
     <Layout>
       <SEO title="Blog" />
       <Link to="/">Go back to the homepage</Link>
-      {edges.map((edge, index) => <BlogPreview key={index} {...edge.node} />)}
+      {props.data.allMdx.edges.map((edge, index) => <BlogPreview key={index} {...edge.node} />)}
+      {props.data.allWordpressPost.edges.map((edge, index) => <WordpressPreview key={index} {...edge.node} />)}
     </Layout>
   )
 }
@@ -44,6 +41,17 @@ export const blogListQuery = graphql`
               alt
             }
           }
+        }
+      }
+    }
+
+    allWordpressPost {
+      edges {
+        node {
+          slug
+          title
+          date
+          content
         }
       }
     }
