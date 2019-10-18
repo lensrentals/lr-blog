@@ -103,7 +103,8 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 
 <hr />
 
-** Technology Notes
+## Technology Notes
+
 - Git based static site generators
     - Jekyll (ruby) https://jekyllrb.com/
         - Pros:
@@ -157,3 +158,86 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 - Stackbit - https://www.stackbit.com/
     - Cool tool for quickly scaffolding SSG/CMS combinations. 
     - Good for reference, but I think we’re better off setting up our own config rather than sifting through someone else’s
+
+## Upgrade Plan Notes
+
+Phase 1 - Replicated Wordpress / Replace Frontend
+Strategy - 
+    - Set up new Gatsby site
+        - Source WP content
+        - Source images?
+    - Set up WP to post to consumable endpoint
+Frontend - 
+    - Framework / header / footer
+        - Categories
+        - Authors
+        - Search
+        - Feedly?
+    - Pages
+        - Article List page
+            - Filter by category
+            - Filter by tag?
+            - Filter by author
+            - Recent Posts
+            - Pagination
+        - “Catgory” grid page
+        - Article Detail Page
+            - Article meta
+            - article body
+            - Content types?
+            - Disqus comments
+            - Share functionality
+    - Tests
+Concerns / Notes - 
+    - We will most likely have to rebuild styles from scratch
+    - We will need to make sure all tracking/analytics also gets moved over correctly
+    - Content Writers can continue to edit the blog as they do now, through Wordpress, but this might complicate preview functionality.
+        - I’m unsure if this can still live at lensrentals.com/blog/wp-login.php, we might end up needing to move some Wordpress portions out of the way.
+    - There is possibly a complication of having too many posts - https://www.gatsbyjs.org/packages/gatsby-source-wordpress/#typeerror---cannot-read-property-id-of-undefined-with-wordpresscom
+Phase 2 - CMS Switch / Replace Backend
+	Planning - 
+    - Definition of user roles/level/permissions
+
+	Strategy - 
+    - Netlify CMS auth/hosting 
+    - Creation of user roles/level/permissions
+    - Come up with extensible template system
+    - Move images between CDNs
+	Frontend - 
+    - Replicate all Wordpress editor functionality
+    - Template system plumbing
+    - Editor Components
+    - Widget Components
+    - SEO
+    - Tests
+	Concerns / Notes - 
+    - Content Writer training on new system 
+    - We want to make sure and audit all the Wordpress plugins used and make sure we think through all of their uses
+    - I think thinking through frontmatter data shape now will make life easier in the future
+        - Figuring out what common fields we can extract will be helpful too
+
+Phase 3 - New Content Types
+	Planning - 
+    - What are the new content types?
+        - Teardown, MTF chart, Review, Podcast, etc..
+        - Break these down into structured data
+        - Break these down into Editor / Widget components
+    - Possibly look at how to get WP posts into markdown data
+	Design - 
+    - Content type templates / components
+
+	Strategy - 
+    - Possibly look at how to get WP posts into markdown data
+    - Build component library documentation?
+	Frontend - 
+    - Build Editor / Widget components
+    - Build Preview components
+    - Build content type components
+    - Build content type templates
+    - Tests
+	Concerns / Notes - 
+    - This phase could be cyclical, go through all steps and build out requirements for one content type at a time.
+
+Phase 4 - Deprecate Wordpress?
+    - Do we want to do this? Do we need to move all 600+ posts into markdown?
+    - Are we going to go back and edit past posts to fit them into new content types?
