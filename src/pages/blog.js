@@ -12,7 +12,11 @@ const BlogList = (props) => {
       <SEO title="Blog" />
       <Link to="/">Go back to the homepage</Link>
       {props.data.allMdx.edges.map((edge, index) => <BlogPreview key={index} {...edge.node} />)}
+<<<<<<< HEAD
       {/* {props.data.allWordpressPost.edges.map((edge, index) => <WordpressPreview key={index} {...edge.node} />)} */}
+=======
+      {props.data.allWordpressPost.edges.map((edge, index) => <WordpressPreview key={index} {...edge.node} />)}
+>>>>>>> 4c21ba85ee8ae59cb75878f39bddf9cfaac03ecb
     </Layout>
   )
 }
