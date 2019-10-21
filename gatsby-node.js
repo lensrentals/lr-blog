@@ -61,7 +61,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+<<<<<<< Updated upstream
       allWordpressPost {
+=======
+      allWordpressPost(
+        limit: 99
+      ) {
+>>>>>>> Stashed changes
         edges {
           node {
             id
@@ -91,7 +97,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
   result.data.allWordpressPost.edges.forEach(({ node }) => {
+<<<<<<< Updated upstream
     console.log('==========',node)
+=======
+>>>>>>> Stashed changes
     createPage({
       path: node.slug,
       component: path.resolve(`./src/templates/wordpress-blog.js`),
