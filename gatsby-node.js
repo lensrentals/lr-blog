@@ -61,23 +61,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-<<<<<<< Updated upstream
-      allWordpressPost {
-=======
-      allWordpressPost(
-        limit: 99
-      ) {
->>>>>>> Stashed changes
-        edges {
-          node {
-            id
-            slug
-            title
-            date
-            content
-          }
-        }
-      }
+      // allWordpressPost(
+      //   limit: 99
+      // ) {
+      //   edges {
+      //     node {
+      //       id
+      //       slug
+      //       title
+      //       date
+      //       content
+      //     }
+      //   }
+      // }
     }
   `)
   // Handle errors
@@ -97,10 +93,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
   result.data.allWordpressPost.edges.forEach(({ node }) => {
-<<<<<<< Updated upstream
-    console.log('==========',node)
-=======
->>>>>>> Stashed changes
     createPage({
       path: node.slug,
       component: path.resolve(`./src/templates/wordpress-blog.js`),

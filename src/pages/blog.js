@@ -12,7 +12,7 @@ const BlogList = (props) => {
       <SEO title="Blog" />
       <Link to="/">Go back to the homepage</Link>
       {props.data.allMdx.edges.map((edge, index) => <BlogPreview key={index} {...edge.node} />)}
-      {props.data.allWordpressPost.edges.map((edge, index) => <WordpressPreview key={index} {...edge.node} />)}
+      {/* {props.data.allWordpressPost.edges.map((edge, index) => <WordpressPreview key={index} {...edge.node} />)} */}
     </Layout>
   )
 }
@@ -45,16 +45,16 @@ export const blogListQuery = graphql`
       }
     }
 
-    allWordpressPost {
-      edges {
-        node {
-          slug
-          title
-          date
-          content
-        }
-      }
-    }
+    # allWordpressPost {
+    #   edges {
+    #     node {
+    #       slug
+    #       title
+    #       date
+    #       content
+    #     }
+    #   }
+    # }
   }
 `
 
