@@ -163,6 +163,7 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 
 
 ## Phase 1 - Replicated Wordpress / Replace Frontend 
+## Estimate:  3 weeks
 - **Strategy**
 	- Set up new Gatsby site
 	- Source WP content - Source images? 
@@ -198,7 +199,7 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 	- There is possibly a complication of having too many posts - [https://www.gatsbyjs.org/packages/gatsby-source-wordpress/#typeerror---cannot-read-property-id-of-undefined-with-wordpresscom](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/#typeerror---cannot-read-property-id-of-undefined-with-wordpresscom) 
 
 ## Phase 2 - CMS Switch / Replace Backend 
-
+## Estimate: 4 Weeks (this could change depending on plugin scope, testing is kind of unknown here)
 - **Planning**
 	- Definition of user roles/level/permissions
 
@@ -223,6 +224,7 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 	- Figuring out what common fields we can extract will be helpful too
 
 ## Phase 3 - New Content Types
+## Estimate: 1-2 Weeks per type (could get faster as we go)
 - **Planning**
 	- What are the new content types?
 	- Teardown, MTF chart, Review, Podcast, etc. 
@@ -245,5 +247,6 @@ Uses the npm package [cloudinary-react](https://www.npmjs.com/package/cloudinary
 
 ## Phase 4 - Deprecate Wordpress?
 - Do we want to do this?
+	- After further investigating the WP REST API, the connection to graphql is fragile and I think we would do well to consider fully replacing the Wordpress end
 - Do we need to move all 600+ posts into markdown?
 	- Are we going to go back and edit past posts to fit them into new content types?
