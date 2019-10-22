@@ -55,22 +55,23 @@ module.exports = {
     },
 
     {
-      // from gatsby-starter-wordpress
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'lensrentals.com/blog',
+        baseUrl: 'www.lensrentals.com/blog',
         hostingWPCOM: false,
         protocol: 'https',
-        useACF: false,
+        useACF: false, // ???
         auth: {},
         verboseOutput: false,
         includedRoutes: [
           "**/posts",
           "**/pages",
           "**/categories",
-          // "**/media",
-          // "**/tags",
+          "**/tags",
+          "**/users",
         ],
+        perPage: 100,
+        concurrentRequests: 100,
       },
     },
   ],

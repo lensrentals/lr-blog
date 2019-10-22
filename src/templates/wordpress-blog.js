@@ -4,10 +4,16 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Markdown from '../components/markdown'
 import Image from "../components/image"
+import { List } from "../components/meta"
 
 const WordpressPost = (props) => {
   const { wordpressPost } = props.data // wordpressPost.Mdx holds our post data
-  const { content } = wordpressPost
+  const { 
+    title,
+    date,
+    content,
+    categories,
+   } = wordpressPost
 
   // const Banner = () => {
   //   let image;
@@ -24,12 +30,14 @@ const WordpressPost = (props) => {
       <div className="blog-post-container">
         {/* <Banner /> */}
         <div className="blog-post">
-          {/* <h1>{frontmatter.title}</h1> */}
-          {/* <h2>{frontmatter.meta.date}</h2> */}
+          <header>
+            <h1>{title}</h1>
+            <h2>{date}</h2>
+            <List title="categories" array={categories} />
+          </header>
           {/* <Markdown post={body} /> */}
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
-        hey
       </div>
     </Layout>
   )
@@ -42,6 +50,9 @@ export const wordpressPostQuery = graphql`
       title
       date
       content
+      categories {
+        name
+      }
     }
   }
 `

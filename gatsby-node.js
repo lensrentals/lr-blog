@@ -1,6 +1,7 @@
 const path = require(`path`)
 const { slugify } = require(`./src/helpers`)
 
+
 exports.onCreateNode = ({ node, actions }) => {
 	const { createNodeField } = actions
 	if (node.internal.type === `Mdx`) {
@@ -39,7 +40,7 @@ exports.onCreateNode = ({ node, actions }) => {
 			name: `template`,
 			value: template,
 		})
-	}
+  }
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -47,7 +48,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMdx(
+      allMdx (
         sort: { order: DESC, fields: [frontmatter___meta___date] }
         limit: 1000
       ) {
@@ -61,19 +62,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      // allWordpressPost(
-      //   limit: 99
-      // ) {
-      //   edges {
-      //     node {
-      //       id
-      //       slug
-      //       title
-      //       date
-      //       content
-      //     }
-      //   }
-      // }
+
+      allWordpressPost (
+        limit: 1000
+      ) {
+        edges {
+          node {
+            id
+            slug
+            title
+            date
+            content
+            categories {
+              name
+            }
+            author {
+              name
+            }
+          }
+        }
+      }
+
+      allWordpressWpUsers (
+        limit: 1000
+      ) {
+        edges {
+          node {
+            wordpress_id
+            name
+          }
+        }
+      }
     }
   `)
   // Handle errors
@@ -89,16 +108,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         id: node.id,
         slug: node.fields.slug,
         template: node.fields.template,
-      },
-    })
-  })
-  result.data.allWordpressPost.edges.forEach(({ node }) => {
-    createPage({
-      path: node.slug,
-      component: path.resolve(`./src/templates/wordpress-blog.js`),
-      context: {
-        id: node.id,
-        slug: node.slug,
       },
     })
   })

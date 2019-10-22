@@ -7,7 +7,8 @@ const WordpressPreview = (props) => {
   const {
     slug,
     title,
-    date
+    date,
+    author
   } = props
 
   return (
@@ -17,7 +18,8 @@ const WordpressPreview = (props) => {
     }}>
       <Link to={slug}>
         <header>{title}</header>
-        {date}
+        <div>{date}</div>
+        {author.name && <div>By: {author.name}</div>}
       </Link>
     </div>
   )
