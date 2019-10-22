@@ -60,7 +60,7 @@ module.exports = {
         baseUrl: 'www.lensrentals.com/blog',
         hostingWPCOM: false,
         protocol: 'https',
-        useACF: false, // ???
+        useACF: true, // ???
         auth: {},
         verboseOutput: false,
         includedRoutes: [

@@ -7,7 +7,7 @@ import Image from "../components/image"
 import { List } from "../components/meta"
 
 const WordpressPost = (props) => {
-  const { wordpressPost } = props.data // wordpressPost.Mdx holds our post data
+  const { wordpressPost } = props.data
   const { 
     title,
     date,

@@ -82,17 +82,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-
-      allWordpressWpUsers (
-        limit: 1000
-      ) {
-        edges {
-          node {
-            wordpress_id
-            name
-          }
-        }
-      }
     }
   `)
   // Handle errors
@@ -108,6 +97,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         id: node.id,
         slug: node.fields.slug,
         template: node.fields.template,
+      },
+    })
+  })
+
+    result.data.allWordpressPost.edges.forEach(({ node }) => {
+    createPage({
+      path: node.slug,
+      component: path.resolve(`./src/templates/wordpress-blog.js`),
+      context: {
+        id: node.id,
+        slug: node.slug,
       },
     })
   })
